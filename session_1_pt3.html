@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="name">Name <abbr title="Required">*</abbr></label>
+        <input type="text" id="name" name="name" value="">
+      </div>
+      <div>
+        <label for="email">Email <abbr title="Required">*</abbr></label>
+        <input type="email" id="email" name="email" value="sallysalon.com">
+      </div>
+      <div>
+        <label for="phone">Phone Number <abbr title="Required">*</abbr></label>
+        <input type="tel" id="phone" name="name" value="">
+      </div>
+    </form>
+
+  </body>
+  <script type="text/javascript">
+    (function(){
+
+      if(document.getElementById('name').value === ''){
+        alert("Name is blank");
+      }
+      if(document.getElementById('email').value === ''){
+        alert("Email is blank");
+      }
+      if(document.getElementById('phone').value === ''){
+        alert("Phone Number is blank");
+      }
+
+      function validateEmail(email){
+        var atpos = email.indexOf("@");
+        var dotpos = email.lastIndexOf(".");
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+          return false;
+        }else{
+          return true;
+        }
+      }
+
+      if(!validateEmail(document.getElementById('email').value)){
+        alert("Email is not valid");
+      }
+
+    })();
+  </script>
+</html>
